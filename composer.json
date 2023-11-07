@@ -1,0 +1,20 @@
+{
+	"name": "dananghel89/easypack-appstarter",
+	"description": "EasyPack App",
+	"type": "project",
+	"repositories": {
+		"dananghel89/easypack-framework": {
+			"type": "vcs",
+			"url": "https://github.com/dananghel89/easypack-framework"
+		}
+	},
+	"require": {
+		"php": ">=7.0",
+		"dananghel89/easypack-framework": "dev-master"
+	},
+	"autoload": {
+		"psr-4": {
+			"App\\": "app/"
+		}
+	}
+}
