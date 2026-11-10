@@ -1,10 +1,9 @@
 /.idea
+/.phpunit.cache
 /.vscode
 /vendor
+
 .DS_Store
-Thumbs.db
-composer.lock
-composer.phar
 .env
 auth.json
-/.phpunit.cache
+Thumbs.db
