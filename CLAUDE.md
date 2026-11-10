@@ -24,7 +24,7 @@ composer test:lint
 ## Conventions
 
 - Views escape every variable with `e()`.
-- `.env` is never committed. A new setting goes into `config/app.php` (only listed keys can be overridden in `.env`) and into `.env.example`.
+- `.env` is never committed. A new setting goes into `config/app.php` (only listed keys can be overridden in `.env`) and into `.env.example`. The editor knows the framework's constants from `vendor/dananghel89/easypack-framework/stubs/constants.php`; for a new key of the app, declare it the same way in a stub file of the app, or the editor reports it as undefined.
 - Commit messages: one line, `type: description`.
 - Git identity is set locally in this repo (`dananghel89` with the GitHub noreply address); check it before committing.
 - Never put a personal name, an email address, or the old Composer vendor / Bitbucket workspace names into files or commits. The only identity in the repo is `dananghel89`.
