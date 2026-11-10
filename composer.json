@@ -2,6 +2,7 @@
 	"name": "dananghel89/easypack-appstarter",
 	"description": "EasyPack App",
 	"type": "project",
+	"license": "MIT",
 	"repositories": {
 		"dananghel89/easypack-framework": {
 			"type": "path",

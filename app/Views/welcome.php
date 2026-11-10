@@ -1,241 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Welcome to <?= e($name) ?></title>
 	<meta name="description" content="Simple PHP framework for building web applications">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
-
-	<!-- STYLES -->
-
+	<link rel="icon" href="/favicon.ico">
 	<style>
-		* {
-			transition: background-color 300ms ease, color 300ms ease;
+		:root {
+			--ink: #1f2933;
+			--muted: #616e7c;
+			--line: #e4e7eb;
+			--paper: #ffffff;
+			--canvas: #f5f7fa;
 		}
-		*:focus {
-			background-color: rgba(221, 72, 20, .2);
-			outline: none;
-		}
-		html, body {
-			color: rgba(33, 37, 41, 1);
-			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-			font-size: 16px;
-			margin: 0;
-			padding: 0;
-			height: 100%;
-			-webkit-font-smoothing: antialiased;
-			-moz-osx-font-smoothing: grayscale;
-			text-rendering: optimizeLegibility;
-		}
+		* { box-sizing: border-box; }
 		body {
+			margin: 0;
+			min-height: 100vh;
 			display: flex;
 			flex-direction: column;
+			background: var(--canvas);
+			color: var(--ink);
+			font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 		}
-		body > main {
-			flex-shrink: 0;
-		}
-		header {
-			background-color: rgba(247, 248, 249, 1);
-			padding: .4rem 0 0;
-		}
-		.menu {
-			padding: .4rem 2rem;
-		}
-		header ul {
-			border-bottom: 1px solid rgba(242, 242, 242, 1);
-			list-style-type: none;
-			margin: 0;
-			overflow: hidden;
-			padding: 0;
-			text-align: right;
-		}
-		header li {
-			display: inline-block;
-		}
-		header li a {
-			border-radius: 5px;
-			color: rgba(0, 0, 0, .5);
-			display: block;
-			height: 44px;
-			text-decoration: none;
-		}
-		header li.menu-item a {
-			border-radius: 5px;
-			margin: 5px 0;
-			height: 38px;
-			line-height: 36px;
-			padding: .4rem .65rem;
-			text-align: center;
-		}
-		header li.menu-item a:hover,
-		header li.menu-item a:focus {
-			background-color: rgba(221, 72, 20, .2);
-			color: rgba(221, 72, 20, 1);
-		}
-		header .logo {
-			float: left;
-			height: 44px;
-			padding: .4rem .5rem;
-		}
-		header .menu-toggle {
-			display: none;
-			float: right;
-			font-size: 2rem;
-			font-weight: bold;
-		}
-		header .menu-toggle button {
-			background-color: rgba(221, 72, 20, .6);
-			border: none;
-			border-radius: 3px;
-			color: rgba(255, 255, 255, 1);
-			cursor: pointer;
-			font: inherit;
-			font-size: 1.3rem;
-			height: 36px;
-			padding: 0;
-			margin: 11px 0;
-			overflow: visible;
-			width: 40px;
-		}
-		header .menu-toggle button:hover,
-		header .menu-toggle button:focus {
-			background-color: rgba(221, 72, 20, .8);
-			color: rgba(255, 255, 255, .8);
-		}
-		header .heroe {
+		main {
+			flex: 1;
+			width: 100%;
+			max-width: 760px;
 			margin: 0 auto;
-			max-width: 1100px;
-			padding: 1rem 1.75rem 1.75rem 1.75rem;
+			padding: 4rem 1.25rem 2rem;
 		}
-		header .heroe h1 {
-			font-size: 2.5rem;
-			font-weight: 500;
+		h1 { margin: 0 0 .25rem; font-size: 2.25rem; line-height: 1.2; }
+		.lead { margin: 0 0 2.5rem; color: var(--muted); font-size: 1.15rem; }
+		.card {
+			background: var(--paper);
+			border: 1px solid var(--line);
+			border-radius: 8px;
+			padding: 1.5rem;
+			margin-bottom: 1rem;
 		}
-		header .heroe h2 {
-			font-size: 1.5rem;
-			font-weight: 300;
+		.card h2 { margin: 0 0 .5rem; font-size: 1.1rem; }
+		.card p { margin: 0 0 .75rem; }
+		code {
+			padding: .1rem .3rem;
+			background: var(--canvas);
+			border-radius: 4px;
+			font: .9rem/1.5 ui-monospace, Consolas, monospace;
 		}
-		section {
-			margin: 0 auto;
-			max-width: 1100px;
-			padding: 2.5rem 1.75rem 3.5rem 1.75rem;
-		}
-		section h1 {
-			margin-bottom: 2.5rem;
-		}
-		section h2 {
-			font-size: 120%;
-			line-height: 2.5rem;
-			padding-top: 1.5rem;
-		}
-		section pre {
-			background-color: rgba(247, 248, 249, 1);
-			border: 1px solid rgba(242, 242, 242, 1);
-			display: block;
-			font-size: .9rem;
-			margin: 2rem 0;
-			padding: 1rem 1.5rem;
-			white-space: pre-wrap;
-			word-break: break-all;
-		}
-		section code {
-			display: block;
-		}
-		section a {
-			color: rgba(221, 72, 20, 1);
-		}
-		section svg {
-			margin-bottom: -5px;
-			margin-right: 5px;
-			width: 25px;
-		}
-		.further {
-			background-color: rgba(247, 248, 249, 1);
-			border-bottom: 1px solid rgba(242, 242, 242, 1);
-			border-top: 1px solid rgba(242, 242, 242, 1);
-		}
-		.further h2:first-of-type {
-			padding-top: 0;
-		}
+		pre code { display: block; padding: .5rem .75rem; }
+		pre { margin: 0; }
 		footer {
-			/* background-color: rgba(221, 72, 20, .8); */
+			padding: 1.5rem 1.25rem;
 			text-align: center;
-			border-top: 1px solid rgba(242, 242, 242, 1);
-			margin-top: auto;
-		}
-		footer .environment {
-			color: rgba(255, 255, 255, 1);
-			padding: 2rem 1.75rem;
-		}
-		footer .copyrights {
-			/* background-color: rgba(62, 62, 62, 1); */
-			color: rgba(158, 158, 158, 1);
-			padding: .25rem 1.75rem;
-		}
-		@media (max-width: 629px) {
-			header ul {
-				padding: 0;
-			}
-			header .menu-toggle {
-				padding: 0 1rem;
-			}
-			header .menu-item {
-				background-color: rgba(244, 245, 246, 1);
-				border-top: 1px solid rgba(242, 242, 242, 1);
-				margin: 0 15px;
-				width: calc(100% - 30px);
-			}
-			header .menu-toggle {
-				display: block;
-			}
-			header .hidden {
-				display: none;
-			}
-			header li.menu-item a {
-				background-color: rgba(221, 72, 20, .1);
-			}
-			header li.menu-item a:hover,
-			header li.menu-item a:focus {
-				background-color: rgba(221, 72, 20, .7);
-				color: rgba(255, 255, 255, .8);
-			}
+			color: var(--muted);
+			font-size: .875rem;
+			border-top: 1px solid var(--line);
 		}
 	</style>
 </head>
 <body>
-
-<!-- HEADER -->
-
-<main role="main">
-<header>
-	<div class="heroe">
+	<main>
 		<h1>Welcome to <?= e($name) ?></h1>
-		<h2>Simple PHP project for building web applications</h2>
-	</div>
-</header>
+		<p class="lead">A simple PHP framework for building web applications.</p>
 
-<!-- CONTENT -->
+		<section class="card">
+			<h2>This page</h2>
+			<p>It is rendered by the view:</p>
+			<pre><code>app/Views/welcome.php</code></pre>
+		</section>
 
-<section>
-	<h1>About this page</h1>
-	<p>The page you are looking at is being generated dynamically by <?= e($name) ?>.</p>
+		<section class="card">
+			<h2>Its controller and route</h2>
+			<p>The <code>GET /</code> route in <code>routes/web.php</code> calls:</p>
+			<pre><code>app/Controllers/Home.php</code></pre>
+		</section>
+	</main>
 
-	<p>If you would like to edit this page you will find it located at:</p>
-	<pre><code>app/Views/welcome.php</code></pre>
-
-	<p>The corresponding controller for this page can be found at:</p>
-	<pre><code>app/Controllers/Home.php</code></pre>
-</section>
-</main>
-
-<!-- FOOTER -->
-
-<footer>
-	<div class="copyrights">
-		<p><?= sprintf('&copy; %s %s', date('Y'), e($name)) ?> <span style="margin: 0 5px;">|</span> All Rights Reserved</p>
-	</div>
-</footer>
-
+	<footer>
+		&copy; <?= date('Y') ?> <?= e($name) ?>
+	</footer>
 </body>
 </html>

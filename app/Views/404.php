@@ -2,76 +2,29 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>404 Page Not Found</title>
-
 	<style>
-		div.logo {
-			height: 200px;
-			width: 155px;
-			display: inline-block;
-			opacity: 0.08;
-			position: absolute;
-			top: 2rem;
-			left: 50%;
-			margin-left: -73px;
-		}
 		body {
-			height: 100%;
-			background: #fafafa;
-			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-			color: #777;
-			font-weight: 300;
+			margin: 0;
+			min-height: 100vh;
+			display: grid;
+			place-items: center;
+			background: #f5f7fa;
+			color: #1f2933;
+			font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 		}
-		h1 {
-			font-weight: lighter;
-			letter-spacing: normal;
-			font-size: 3rem;
-			margin-top: 0;
-			margin-bottom: 0;
-			color: #222;
-		}
-		.wrap {
-			max-width: 1024px;
-			margin: 5rem auto;
-			padding: 2rem;
-			background: #fff;
-			text-align: center;
-			border: 1px solid #efefef;
-			border-radius: 0.5rem;
-			position: relative;
-		}
-		pre {
-			white-space: normal;
-			margin-top: 1.5rem;
-		}
-		code {
-			background: #fafafa;
-			border: 1px solid #efefef;
-			padding: 0.5rem 1rem;
-			border-radius: 5px;
-			display: block;
-		}
-		p {
-			margin-top: 1.5rem;
-		}
-		.footer {
-			margin-top: 2rem;
-			border-top: 1px solid #efefef;
-			padding: 1em 2em 0 2em;
-			font-size: 85%;
-			color: #999;
-		}
-		a:active,
-		a:link,
-		a:visited {
-			color: #dd4814;
-		}
+		.box { padding: 2rem 1.25rem; text-align: center; }
+		h1 { margin: 0 0 .5rem; font-size: 2rem; }
+		p { margin: 0 0 1.5rem; color: #616e7c; }
+		a { color: #2f6fde; }
 	</style>
 </head>
 <body>
-	<div class="wrap">
-		<h1>404 - File Not Found</h1>
-		<p>Sorry! Cannot seem to find the page you were looking for.</p>
+	<div class="box">
+		<h1>404 - Page Not Found</h1>
+		<p>The page you are looking for doesn't exist or has moved.</p>
+		<a href="/">Back to the home page</a>
 	</div>
 </body>
 </html>
