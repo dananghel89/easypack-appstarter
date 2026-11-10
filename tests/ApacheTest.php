@@ -3,9 +3,6 @@
 /**
  * Checks against the real Apache vhost (http://easypack.test), which applies
  * public/.htaccess. Skipped when the vhost isn't reachable.
- *
- * Only redirects are checked: with APP_DEBUG = true, PHP notices printed
- * before the headers can change the status code (404 → 200).
  */
 
 function apache_request(string $method, string $path): array
@@ -38,4 +35,12 @@ test('R06: a POST without a trailing slash is not redirected', function () {
 
 test('R06: a GET without a trailing slash is not redirected', function () {
     expect(apache_request('GET', '/missing')['status'])->not->toBeIn([301, 302]);
+})->skip(!$reachable, 'http://easypack.test is not reachable');
+
+test('a missing page answers 404 and the home page shows no PHP notices', function () {
+    $home = apache_request('GET', '/');
+
+    expect(apache_request('GET', '/missing')['status'])->toBe(404)
+        ->and($home['status'])->toBe(200)
+        ->and($home['body'])->not->toContain('Deprecated');
 })->skip(!$reachable, 'http://easypack.test is not reachable');

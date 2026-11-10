@@ -8,7 +8,7 @@ Plans live in `../docs/` (not in this repo).
 
 - Runtime constraint `php >=7.0` (the framework needs 7.3); development on PHP 8.4.26 (WAMP).
 - Local site: `http://easypack.test` (WAMP vhost → `public/`, `AllowOverride All`). The local `.env` has `APP_DEBUG = true` and no database (`DB_NAME = null`; the connection is lazy).
-- With `APP_DEBUG = true`, the framework's delight-im/db deprecation notices are printed before the headers, so status codes (404) and cookies can't be set on Apache. With `APP_DEBUG = false` they are correct. This goes away with the upgrade plan.
+- With `APP_DEBUG = true`, errors and deprecations from the app and the framework are shown. Deprecations from third-party packages in `vendor/` (delight-im/db, Plates on PHP 8.4) are skipped by `Epack\ErrorHandler`, so they don't break status codes or cookies.
 
 ## Commands
 
