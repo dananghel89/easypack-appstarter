@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Welcome to <?= $name ?></title>
+	<title>Welcome to <?= e($name) ?></title>
 	<meta name="description" content="Simple PHP framework for building web applications">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
@@ -210,7 +210,7 @@
 <main role="main">
 <header>
 	<div class="heroe">
-		<h1>Welcome to <?= $name ?></h1>
+		<h1>Welcome to <?= e($name) ?></h1>
 		<h2>Simple PHP project for building web applications</h2>
 	</div>
 </header>
@@ -219,7 +219,7 @@
 
 <section>
 	<h1>About this page</h1>
-	<p>The page you are looking at is being generated dynamically by <?= $name ?>.</p>
+	<p>The page you are looking at is being generated dynamically by <?= e($name) ?>.</p>
 
 	<p>If you would like to edit this page you will find it located at:</p>
 	<pre><code>app/Views/welcome.php</code></pre>
@@ -233,7 +233,7 @@
 
 <footer>
 	<div class="copyrights">
-		<p><?= sprintf('&copy; %s %s', date('Y'), $name) ?> <span style="margin: 0 5px;">|</span> All Rights Reserved</p>
+		<p><?= sprintf('&copy; %s %s', date('Y'), e($name)) ?> <span style="margin: 0 5px;">|</span> All Rights Reserved</p>
 	</div>
 </footer>
 

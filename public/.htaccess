@@ -11,11 +11,7 @@
 	RewriteCond %{HTTPS}s/%1 ^(on(s)|offs)/(.+)
 	RewriteRule ^ http%2://%3%{REQUEST_URI} [L,R=301]
 
-	# redirect trailing slashes
-	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteCond %{REQUEST_URI} !/$
-	RewriteRule ^(.+)$ /$1/ [L,R=301]
-
+	# send every request that isn't a file or folder to the front controller
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteRule . index.php [L]
