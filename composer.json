@@ -4,8 +4,11 @@
 	"type": "project",
 	"repositories": {
 		"dananghel89/easypack-framework": {
-			"type": "vcs",
-			"url": "https://github.com/dananghel89/easypack-framework"
+			"type": "path",
+			"url": "../easypack-framework",
+			"options": {
+				"symlink": true
+			}
 		}
 	},
 	"require": {
