@@ -1,8 +1,8 @@
 <?php
 
 // Absolute path to site directory.
-if ( !defined('ABS_PATH') ) {
-	define('ABS_PATH', dirname(__DIR__));
+if (!defined('ABS_PATH')) {
+    define('ABS_PATH', dirname(__DIR__));
 }
 
 // Register the auto loader.

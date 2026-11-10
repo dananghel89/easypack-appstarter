@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Collection of helper functions used by application.
  */

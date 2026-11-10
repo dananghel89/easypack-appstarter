@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Test bootstrap.
  *
@@ -16,5 +17,5 @@ use Tests\Support\Server;
  */
 function http(string $method, string $path, array $options = []): array
 {
-	return Server::request($method, $path, $options);
+    return Server::request($method, $path, $options);
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Mapping Routes
  *
@@ -9,11 +10,11 @@ $router = Epack\Router::getInstance();
 
 /*----------  Route Definitions  ----------*/
 
-$router->map( 'GET', '/', 'App\Controllers\Home#index', 'home');
+$router->map('GET', '/', 'App\Controllers\Home#index', 'home');
 
 /*----------  Processing Requests  ----------*/
 
-\Epack\Router::dispatch( function() {
-	$error = new App\Controllers\Error();
-	$error->index();
-} );
+\Epack\Router::dispatch(function () {
+    $error = new App\Controllers\Error();
+    $error->index();
+});
