@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-EasyPack App starter: the skeleton of an application on the EasyPack Framework (`app/`, `config/`, `routes/web.php`, `public/` as the web root). The framework comes from the sibling repo `../easypack-framework` through a Composer `path` repository (a junction at `vendor/dananghel89/easypack-framework`). The GitHub migration plan switches it to the GitHub repository.
+EasyPack App starter: the skeleton of an application on the EasyPack Framework (`app/`, `config/`, `routes/web.php`, `public/` as the web root). The framework is installed from GitHub (`vcs` repository https://github.com/dananghel89/easypack-framework, `^1.0`); no credentials are needed. To try unreleased framework changes, point `composer.json` at a `path` repository `../easypack-framework` temporarily (don't commit that).
 
 Plans live in `../docs/` (not in this repo).
 
@@ -28,4 +28,4 @@ composer test:lint
 - Commit messages: one line, `type: description`.
 - Git identity is set locally in this repo (`dananghel89` with the GitHub noreply address); check it before committing.
 - Never put a personal name, an email address, or the old Composer vendor / Bitbucket workspace names into files or commits. The only identity in the repo is `dananghel89`.
-- Remote: Bitbucket (private), branch `master`, until the GitHub migration plan.
+- Remote: GitHub `origin` (https://github.com/dananghel89/easypack-appstarter, public), branch `master`. Releases are annotated tags (`v1.0.0`).
