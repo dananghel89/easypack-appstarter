@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fe9b51d87410282b610f47872117cfc6",
+    "content-hash": "25600605575588f31ce95090b010eb32",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -127,11 +127,17 @@
         },
         {
             "name": "dananghel89/easypack-framework",
-            "version": "dev-master",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dananghel89/easypack-framework.git",
+                "reference": "0438affb418f58f1fb3c378cb73dface5378f50f"
+            },
             "dist": {
-                "type": "path",
-                "url": "../easypack-framework",
-                "reference": "eb3147047d3a2a3923cb455a582d08fa704218c5"
+                "type": "zip",
+                "url": "https://api.github.com/repos/dananghel89/easypack-framework/zipball/0438affb418f58f1fb3c378cb73dface5378f50f",
+                "reference": "0438affb418f58f1fb3c378cb73dface5378f50f",
+                "shasum": ""
             },
             "require": {
                 "altorouter/altorouter": "2.0.*",
@@ -175,10 +181,10 @@
                 "MIT"
             ],
             "description": "EasyPack Framework",
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/dananghel89/easypack-framework/tree/v1.0.0"
+            },
+            "time": "2026-11-17T14:40:22+00:00"
         },
         {
             "name": "datatables/datatables",
@@ -4829,9 +4835,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "dananghel89/easypack-framework": 20
-    },
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

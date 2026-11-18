@@ -5,16 +5,13 @@
 	"license": "MIT",
 	"repositories": {
 		"dananghel89/easypack-framework": {
-			"type": "path",
-			"url": "../easypack-framework",
-			"options": {
-				"symlink": true
-			}
+			"type": "vcs",
+			"url": "https://github.com/dananghel89/easypack-framework"
 		}
 	},
 	"require": {
 		"php": ">=7.0",
-		"dananghel89/easypack-framework": "dev-master"
+		"dananghel89/easypack-framework": "^1.0"
 	},
 	"require-dev": {
 		"pestphp/pest": "^5.3",
